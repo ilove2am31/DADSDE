@@ -34,6 +34,7 @@ CDP的RS以ALS model base的CF搭配content base組合成混合推薦。
 Model Base CF: 使用各種機器學習、深度學習、強化學習等演算法建模，並以此模型預測、建立推薦清單。
 
 * **模型概念**
+
 ![](https://i.imgur.com/xCTCrr7.png)
 
 **矩陣分解(Matrix Factorization)**
