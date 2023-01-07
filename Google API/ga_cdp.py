@@ -9,7 +9,7 @@ import numpy as np
 
 
 
-### Set AWSDEFAULT_REGION ###
+### Set AWS_DEFAULT_REGION ###
 os.environ['AWS_DEFAULT_REGION'] = 'ap-northeast-1'
 
 
