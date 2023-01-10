@@ -36,7 +36,7 @@
 
 ![](https://i.imgur.com/oJeEH4M.png)
 
-* 最後在撰寫API串接資料給前端顯示於CDP中
+* 最後再撰寫API串接資料給前端顯示於CDP中
 
 -----------
 
@@ -57,7 +57,7 @@
 3. 產出dashboard所需資料至NoSQl database collections中
 ![](https://i.imgur.com/UiSeHID.png)
 
-* 最後在撰寫API串接資料給前端顯示於SSP中
+* 最後撰寫API串接資料給前端顯示於SSP中
 
 
 
