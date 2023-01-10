@@ -24,6 +24,7 @@
 ![](https://i.imgur.com/vHjanm2.png)
 
 2. 做大量的ETL
+
 參考：[ETL CDP Project](https://github.com/ilove2am31/DADSDE/blob/master/ETL/CDP%20Project/labels_report.py)
 
 3. 產出「行銷渠道互動評級」及「Top10同時購買商品」之database table
@@ -52,6 +53,7 @@
 
 
 2. 做大量的ETL
+
 參考：[ETL SSP Project](https://github.com/ilove2am31/DADSDE/tree/master/ETL/SSP%20Project)
 
 3. 產出dashboard所需資料至NoSQl database collections中
