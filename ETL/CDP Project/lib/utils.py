@@ -45,7 +45,7 @@ def connect_DB(database='fircdp-dev'):
     return engine, con
 
 def connect_pymongo(database='fircdp-dev'):
-    myclient = pymongo.MongoClient("mongodb+srv://root:rd0227853858@cluster0.u6qj2.mongodb.net")
+    myclient = pymongo.MongoClient("mongodb+srv://XXXXXXXXX.mongodb.net")
     mydb = myclient[database]
 
     return myclient, mydb
@@ -58,7 +58,7 @@ def http_response(code, message):
 
 def activity(cdb_id):
     engine,con=connect_DB(cdb_id)
-    path=f'''SELECT activity_id FROM Activity.Activity;  '''
+    path='''SELECT activity_id FROM Activity.Activity;  '''
     cursor = con.execute(path) 
     data = pd.DataFrame(cursor.fetchall(),columns=cursor.keys())               
     acitivity = list(data["activity_id"])+["",""]
