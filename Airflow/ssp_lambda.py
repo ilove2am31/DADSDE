@@ -1,6 +1,8 @@
 ##### Aws lambda to trigger ssp function code #####
 from botocore.session import Session
 from botocore.config import Config
+import os
+os.environ['AWS_DEFAULT_REGION'] = 'ap-northeast-1'
 
 
 ### cap factory ###

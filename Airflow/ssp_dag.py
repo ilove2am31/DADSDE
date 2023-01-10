@@ -25,7 +25,7 @@ default_args = {
 with DAG('ssp', schedule_interval='0 0 */1 * *', catchup=False, default_args=default_args, tags=["ssp"]) as ssp_dags:
     
     ### cap factory ###
-    # run etl code for cap factory #
+    # Run etl code for cap factory #
     run_bottle = PythonOperator(
         task_id = 'cap_factory_lambda',
         python_callable = cap_factory_lambda,
@@ -47,8 +47,8 @@ with DAG('ssp', schedule_interval='0 0 */1 * *', catchup=False, default_args=def
         trigger_rule="all_success",
         bash_command='echo Success' )
     
-    ### familymart ###
-    # run etl code for familymart #
+    ### Familymart ###
+    # Run etl code for familymart #
     run_familymart_ssp = PythonOperator(
         task_id = "familymart_lambda",
         python_callable = familymart_lambda,
