@@ -31,6 +31,7 @@ Method, GET
 Path, api/data/info
 ```
 * 機台數據資料
+
 ![](https://i.imgur.com/OGcOFOt.png)
 
 ```json=
@@ -49,6 +50,7 @@ Method, GET
 Path, api/data/timeline
 ```
 * 每日機台 人群數/停留時間
+
 ![](https://i.imgur.com/GfWZKEC.png)
 
 ```json=
@@ -98,6 +100,7 @@ Method, GET
 Path, api/data/relation
 ```
 * 顧客屬性占比
+
 ![](https://i.imgur.com/xYOsGDk.png)
 
 ```json=
@@ -136,6 +139,7 @@ Method, GET
 Path, api/data/age
 ```
 * 訪客年齡層占比
+
 ![](https://i.imgur.com/UGGd9rK.png)
 
 ```json=
@@ -178,6 +182,7 @@ Method, GET
 Path, api/data/click_stay
 ```
 * 場域點擊次數/停留時間
+
 ![](https://i.imgur.com/vYpV43M.png)
 
 
@@ -217,6 +222,7 @@ Method, GET
 Path, api/data/click_stay_re
 ```
 * 訪客對場域之點擊次數/停留時間
+
 ![](https://i.imgur.com/zgbICQl.png)
 
 ```json=
@@ -264,6 +270,7 @@ Method, GET
 Path, api/data/top10click
 ```
 * 場域Top10瀏覽項目
+
 ![](https://i.imgur.com/vrdJZPf.png)
 
 ```json=
@@ -371,7 +378,9 @@ Method, GET
 Path, api/familymart/data/info
 ```
 * 機台前人、群數、停留時間、點擊首頁
+
 ![](https://i.imgur.com/XuKfCUi.png)
+
 ```json=
 {
 "機台閱覽人數": {
@@ -398,7 +407,9 @@ Method, GET
 Path, api/familymart/data/timeline
 ```
 * 每日機台 人數/停留時間
+
 ![](https://i.imgur.com/j7RtUAv.png)
+
 ```json=
 {
     "2022-10-25": {
@@ -439,7 +450,9 @@ Method, GET
 Path, api/familymart/data/relation
 ```
 * 訪客屬性占比
+
 ![](https://i.imgur.com/pmZPwKV.png)
+
 ```json=
 {
     "relation_group": [
@@ -465,7 +478,9 @@ Method, GET
 Path, api/familymart/data/age_gender
 ```
 * 各年齡層訪客數
+
 ![](https://i.imgur.com/eVwvlwV.png)
+
 ```json=
 {
     "gender": [
@@ -507,7 +522,9 @@ Method, GET
 Path, api/familymart/data/scatter
 ```
 * 功能使用散佈圖
+
 ![](https://i.imgur.com/qyTf2hZ.png)
+
 ```json=
 {
     "品牌": {
@@ -633,7 +650,9 @@ Method, GET
 Path, api/familymart/data/visiters
 ```
 * 訪客屬性點擊排行
+
 ![](https://i.imgur.com/thvGQti.png)
+
 ```json=
 {
     "buttom": {
@@ -753,7 +772,9 @@ Method, GET
 Path, api/familymart/data/recommend
 ```
 * Top 10 相關好物產品點擊
+
 ![](https://i.imgur.com/3acJg3r.png)
+
 ```json=
 {
     "item_name": [
@@ -771,7 +792,9 @@ Method, GET
 Path, api/familymart/data/filter
 ```
 * Top 5 篩選項目點擊次數
+
 ![](https://i.imgur.com/guM9A28.png)
+
 ```json=
 {
     "活動": {
