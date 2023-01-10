@@ -12,12 +12,15 @@
 1. 則須從原始的購買資料、行銷資料、會員資料等
 
 (購買資料)
+
 ![](https://i.imgur.com/tRzGzBW.png)
 
 (行銷資料)
+
 ![](https://i.imgur.com/3OF9jAS.png)
 
 (會員資料)
+
 ![](https://i.imgur.com/vHjanm2.png)
 
 2. 做大量的ETL
@@ -26,9 +29,11 @@
 3. 產出「行銷渠道互動評級」及「Top10同時購買商品」之database table
 
 (行銷渠道互動評級)
+
 ![](https://i.imgur.com/lEmGxeh.png)
 
 (Top10同時購買商品)
+
 ![](https://i.imgur.com/oJeEH4M.png)
 
 * 最後在撰寫API串接資料給前端顯示於CDP中
