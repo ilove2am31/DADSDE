@@ -1,6 +1,4 @@
-# README
-
-## DA DS DE
+# 數據平台專案
 
 近期所作的專案內容主要在處理顧客數據平台(Customer Data Platform, CDP)及智慧零售辨識促銷系統(Smart Sales Promotion, SSP)的數據，含括了資料分析(Data Analysis, DA)、資料科學(Data Science, DS)及數據工程(Data engineering, DE)領域的工作範疇。工作內容主要分為以下5個步驟：
 
@@ -29,9 +27,11 @@ CDP為互動式的顧客數據平台，針對營運裝況、商品銷售狀況�
 SSP結合人臉辨識技術及廣告推播，透過機台前置鏡頭以機器深度學習、影像辨識，即時分析前方顧客的人臉生物特徵，進而預測顧客購物偏好，為顧客達到精準廣告推播；此外，也提供數據後台供企業精準掌握顧客輪廓及喜好等資訊。
 
 * 訪客對場域之點擊次數/停留時間範例圖
+
 ![](https://i.imgur.com/xOKmYtH.png)
 
 * 功能使用散佈圖範例圖
+
 ![](https://i.imgur.com/MNWjkUL.png)
 
 
