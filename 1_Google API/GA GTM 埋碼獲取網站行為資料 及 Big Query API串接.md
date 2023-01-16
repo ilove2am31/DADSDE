@@ -111,11 +111,6 @@ BigQuery Storage Read API,1.1 per TB, 每個月前 300 TB 免費
 3. 點選I AM與管理>身分與存取權管理 > 授予存取權 新增主體、指派角色選擁有者
 4. 點選服務帳戶>金鑰>新增金鑰>json，系統將自動下載json檔金鑰
 5. 將金鑰路徑設定為python env中 GOOGLE_APPLICATION_CREDENTIALS
-
-5. 安裝套件
-```python = 
-pip install --upgrade google-cloud-bigquery
-```
 6. 使用以下方式呼叫，即可將bigquery資料轉為dataframe並匯入DB
 
 ```python=
