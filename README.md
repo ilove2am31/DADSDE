@@ -1,6 +1,6 @@
 # 數據平台專案
 
-近期所的專案內容主要在處理顧客數據平台(Customer Data Platform, CDP)及智慧零售辨識促銷系統(Smart Sales Promotion, SSP)的數據，含括了資料分析(Data Analysis, DA)、資料科學(Data Science, DS)及數據工程(Data engineering, DE)領域的工作範疇。工作內容主要分為以下5個步驟：
+近期所做的專案內容主要在處理顧客數據平台(Customer Data Platform, CDP)及智慧零售辨識促銷系統(Smart Sales Promotion, SSP)的數據，含括了資料分析(Data Analysis, DA)、資料科學(Data Science, DS)及數據工程(Data engineering, DE)領域的工作範疇。工作內容主要分為以下5個步驟：
 
 1. 串接一、二、三方API，獲取所需資料
 2. Data Pipeline以及大量的ETL
