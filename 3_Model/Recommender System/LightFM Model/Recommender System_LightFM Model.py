@@ -7,10 +7,10 @@ from lightfm.data import Dataset
 from lightfm import LightFM
 from lightfm.evaluation import precision_at_k, recall_at_k
 
-cdb_id = 'customer-highwealth'
+cdb_id = 'customer-xxx'
 
 
-def connect_DB(database='fircdp-dev'):
+def connect_DB(database = cdb_id):
     dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table('db_config')
     response = table.get_item( Key = {'cdb_id': database} )
@@ -174,8 +174,9 @@ def lightFm_rec(cdb_id):
     
     ### Step4. Building the interactions matrix ###
     # 1. Interactions matrix (COO Sparse Matrix):
-    interactions, weights = dataset.build_interactions(list(df_interactions.itertuples(index=False)))
+    interactions, interactions_weights = dataset.build_interactions(list(df_interactions.itertuples(index=False)))
     #print(repr(interactions))
+    #print(repr(interactions_weights))
     
     # 2. User features matrix (CSR Sparse Matrix):
     user_features_tuple = ([(x[0], [tuple(x[i] for i in range(1, len(df_user_features.columns)))]) for x in df_user_features.values])
@@ -196,7 +197,7 @@ def lightFm_rec(cdb_id):
                     no_components = 50,
                     user_alpha = 0.000005,
                     item_alpha = 0.000005)
-    model = model.fit(interactions = interactions,
+    model = model.fit(interactions = interactions_weights,
                       user_features = user_features,
                       item_features = item_features,
                       epochs = 100,
