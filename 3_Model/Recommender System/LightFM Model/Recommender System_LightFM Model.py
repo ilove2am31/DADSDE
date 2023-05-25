@@ -27,7 +27,7 @@ def connect_DB(database = cdb_id):
 
 
 ### Recommend k item to the user & Recommend user to items ###
-def rec_topk_item_function(user_ids, item_ids, user_features, item_features, model, user_id_mapping, item_id_mapping, case_mapping, df_user_features, k=5):
+def rec_topk_item_function(user_ids, item_ids, user_features, item_features, model, user_id_mapping, item_id_mapping, case_mapping, k=5):
     # Recommendation scores for each item to the user
     scores = model.predict(user_ids = user_ids, #0 -> member_id=1
                           item_ids = item_ids, #0 -> case_id=1
@@ -216,7 +216,7 @@ def lightFm_rec(cdb_id):
     item_id_mapping.columns = ["case_id", "item_ids"]
     
     for user_ids in user_id_mapping["user_ids"]:
-       top5_item, users = rec_topk_item_function(user_ids, item_ids, user_features, item_features, model, user_id_mapping, item_id_mapping, case_mapping, df_user_features, k=5)
+       top5_item, users = rec_topk_item_function(user_ids, item_ids, user_features, item_features, model, user_id_mapping, item_id_mapping, case_mapping, k=5)
        dftop5_user_item = pd.concat([dftop5_user_item, top5_item])
        df_item_user = pd.concat([df_item_user, users])
     
