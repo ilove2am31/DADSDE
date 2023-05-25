@@ -27,24 +27,24 @@ def connect_DB(database = cdb_id):
 
 
 ### Recommend k item to the user & Recommend user to items ###
-def rec_topk_item_function(user_ids, item_ids, user_features, item_features, model, df_item_features, case_mapping, df_user_features, k=5):
+def rec_topk_item_function(user_ids, item_ids, user_features, item_features, model, user_id_mapping, item_id_mapping, case_mapping, df_user_features, k=5):
     # Recommendation scores for each item to the user
     scores = model.predict(user_ids = user_ids, #0 -> member_id=1
                           item_ids = item_ids, #0 -> case_id=1
                           user_features = user_features,
                           item_features = item_features)
-    scores = pd.DataFrame(scores, columns=["scores"])
-    item_score = pd.concat([df_item_features["case_id"], scores], axis=1).sort_values(by=["scores"], ascending=False)
+    scores = pd.DataFrame(scores, columns=["scores"]).reset_index().rename({"index": "item_ids"}, axis=1)
+    item_score = scores.merge(item_id_mapping, on="item_ids", how="left").sort_values(by=["scores"], ascending=False)
     item_score = item_score.merge(case_mapping, on=["case_id"], how="left")
     
     # REC Top k Item to the user
     topk_item = pd.DataFrame(item_score.loc[:(k-1), "case_name"]).transpose()
     topk_item.columns = [f"case_name{num}" for num in range(1, k+1)]
-    topk_item["member_id"] = df_user_features.loc[user_ids, "member_id"]
+    topk_item["member_id"] = user_id_mapping.loc[user_id_mapping["user_ids"] == user_ids, "member_id"].values[0]
     
     # REC users for item
-    users = item_score[item_score["scores"] > 0].drop(["case_id"], axis=1)
-    users["member_id"] = df_user_features.loc[user_ids, "member_id"]
+    users = item_score[item_score["scores"] > 0].drop(["case_id", "item_ids"], axis=1)
+    users["member_id"] = user_id_mapping.loc[user_id_mapping["user_ids"] == user_ids, "member_id"].values[0]
     
     return topk_item, users
 
@@ -210,8 +210,13 @@ def lightFm_rec(cdb_id):
     dftop5_user_item = pd.DataFrame()
     df_item_user = pd.DataFrame()
     item_ids = np.array(df_item_features.index,)
-    for user_ids in df_user_features.index:
-       top5_item, users = rec_topk_item_function(user_ids, item_ids, user_features, item_features, model, df_item_features, case_mapping, df_user_features)
+    user_id_mapping = pd.DataFrame.from_dict(dataset._user_id_mapping, orient='index').reset_index()
+    user_id_mapping.columns = ["member_id", "user_ids"]
+    item_id_mapping = pd.DataFrame.from_dict(dataset._item_id_mapping, orient='index').reset_index()
+    item_id_mapping.columns = ["case_id", "item_ids"]
+    
+    for user_ids in user_id_mapping["user_ids"]:
+       top5_item, users = rec_topk_item_function(user_ids, item_ids, user_features, item_features, model, user_id_mapping, item_id_mapping, case_mapping, df_user_features, k=5)
        dftop5_user_item = pd.concat([dftop5_user_item, top5_item])
        df_item_user = pd.concat([df_item_user, users])
     
