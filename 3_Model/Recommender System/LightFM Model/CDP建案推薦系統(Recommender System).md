@@ -8,8 +8,7 @@
 ```
 ---
 ## 推薦系統類別
-
-![](https://hackmd.io/_uploads/SJnPb56H3.png)
+![](https://hackmd.io/_uploads/SJJbZCTS2.png)
 
 [圖片來源](https://towardsdatascience.com/recommendation-system-in-python-lightfm-61c85010ce17)
 
@@ -96,12 +95,11 @@ model = model.fit(interactions = interactions_train,
                   verbose = True)
 ```
 超參數(learning_schedule)比較範例圖:
+![](https://hackmd.io/_uploads/SJCfbATrn.png)
 
-![](https://hackmd.io/_uploads/r1ZQITTHn.png)
 
 超參數(no_components)比較範例圖:
-
-![](https://hackmd.io/_uploads/By6SFTaS3.png)
+![](https://hackmd.io/_uploads/HyNQWR6Sn.png)
 
 
 ### 4. 驗證與評估
@@ -118,14 +116,15 @@ Ex: A會員真正有預約(a,b,c,d,e)，模型推薦(a,b,c,f,g)，recall=TP/(TP+
 
 ### 5. 預測
 1. 每位會員top5推薦建案。
+![](https://hackmd.io/_uploads/rygEWA6Sn.png)
 
-![](https://hackmd.io/_uploads/BJOMji6S2.png)
 
 2. 每建案推薦會員名單。
 
 目前採用模型推薦分數>0即加入名單。
+![](https://hackmd.io/_uploads/ry5NZRpH3.png)
 
-![](https://hackmd.io/_uploads/HkBEji6B3.png)
+
 
 
 
