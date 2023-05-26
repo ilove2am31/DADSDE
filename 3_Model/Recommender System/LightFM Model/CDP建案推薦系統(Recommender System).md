@@ -8,12 +8,14 @@
 ```
 ---
 ## 推薦系統類別
-![](https://hackmd.io/_uploads/SJJbZCTS2.png)
+![image](https://github.com/ilove2am31/DADSDE/assets/18157153/42cd3dd4-0948-4c0e-82ad-5f040c638187)
+
 
 [圖片來源](https://towardsdatascience.com/recommendation-system-in-python-lightfm-61c85010ce17)
 
 ### **內容過濾**
 將商品做分類，比較商品的屬性，找出商品跟商品之間的關聯，進而找出最相似的商品推薦。
+
     - 優點: 速度快、占用資源少、可應用於新商品
     - 缺點: 準確率低，未考慮商品暢銷程度、使用者偏好
 
@@ -95,11 +97,13 @@ model = model.fit(interactions = interactions_train,
                   verbose = True)
 ```
 超參數(learning_schedule)比較範例圖:
-![](https://hackmd.io/_uploads/SJCfbATrn.png)
+
+![image](https://github.com/ilove2am31/DADSDE/assets/18157153/ec52cfcc-e945-47ec-83cc-1673283a43af)
 
 
 超參數(no_components)比較範例圖:
-![](https://hackmd.io/_uploads/HyNQWR6Sn.png)
+
+![image](https://github.com/ilove2am31/DADSDE/assets/18157153/4d4d0f43-3b0a-4bfe-b8fd-94892ba25be0)
 
 
 ### 4. 驗證與評估
@@ -116,13 +120,15 @@ Ex: A會員真正有預約(a,b,c,d,e)，模型推薦(a,b,c,f,g)，recall=TP/(TP+
 
 ### 5. 預測
 1. 每位會員top5推薦建案。
-![](https://hackmd.io/_uploads/rygEWA6Sn.png)
+
+![image](https://github.com/ilove2am31/DADSDE/assets/18157153/a3c1b800-9b13-4ed1-9aed-b22d22cef04c)
 
 
 2. 每建案推薦會員名單。
 
 目前採用模型推薦分數>0即加入名單。
-![](https://hackmd.io/_uploads/ry5NZRpH3.png)
+
+![image](https://github.com/ilove2am31/DADSDE/assets/18157153/b7c8bad1-b7b8-465f-a113-f5e64b9a821d)
 
 
 
