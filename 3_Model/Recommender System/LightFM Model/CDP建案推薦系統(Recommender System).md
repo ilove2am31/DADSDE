@@ -121,7 +121,7 @@ Ex: A會員真正有預約(a,b,c,d,e)，模型推薦(a,b,c,f,g)，recall=TP/(TP+
 
 ![](https://hackmd.io/_uploads/BJOMji6S2.png)
 
-3. 每建案推薦會員名單。
+2. 每建案推薦會員名單。
 
 目前採用模型推薦分數>0即加入名單。
 
