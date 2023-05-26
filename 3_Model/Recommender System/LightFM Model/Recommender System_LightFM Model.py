@@ -6,6 +6,7 @@ from sqlalchemy.pool import NullPool
 from lightfm.data import Dataset
 from lightfm import LightFM
 from lightfm.evaluation import precision_at_k, recall_at_k
+from lightfm.cross_validation import random_train_test_split
 
 cdb_id = 'customer-xxx'
 
@@ -178,6 +179,12 @@ def lightFm_rec(cdb_id):
     #print(repr(interactions))
     #print(repr(interactions_weights))
     
+    # # Train/Test Data Split (If need)
+    # interactions_train, interactions_test = random_train_test_split(interactions_weights, test_percentage=0.3, random_state=42)
+    # print(repr(interactions_train))
+    # print(repr(interactions_test))
+
+    
     # 2. User features matrix (CSR Sparse Matrix):
     user_features_tuple = ([(x[0], [tuple(x[i] for i in range(1, len(df_user_features.columns)))]) for x in df_user_features.values])
     user_features = dataset.build_user_features(user_features_tuple)
@@ -223,6 +230,16 @@ def lightFm_rec(cdb_id):
     dftop5_user_item.reset_index(drop=True, inplace=True)
     df_item_user.sort_values(by=["case_name", "scores"], ascending=False, inplace=True)
     
+    
+    # ### Additional . Evaluate (If need) ###
+    # # hyperparameters for the model
+    # model.get_params()
+    # # recall at k itmes
+    # print("Train precision: %.2f" % recall_at_k(model, interactions_train, user_features=user_features, item_features=item_features, k=5).mean()) #0.9999999
+    # recall_train = recall_at_k(model, interactions_train, user_features=user_features, item_features=item_features, k=5) 
+    # print("Test precision: %.2f" % recall_at_k(model, interactions_test, user_features=user_features, item_features=item_features, k=5).mean()) #0.66 
+    # recall_test = recall_at_k(model, interactions_test, user_features=user_features, item_features=item_features, k=5)
+
     
     return dftop5_user_item, df_item_user
 
