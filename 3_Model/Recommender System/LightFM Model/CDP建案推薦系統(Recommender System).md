@@ -8,9 +8,11 @@
 ```
 ---
 ## 推薦系統類別
+
 ![](https://hackmd.io/_uploads/SJnPb56H3.png)
 
 [圖片來源](https://towardsdatascience.com/recommendation-system-in-python-lightfm-61c85010ce17)
+
 ### **內容過濾**
 將商品做分類，比較商品的屬性，找出商品跟商品之間的關聯，進而找出最相似的商品推薦。
     - 優點: 速度快、占用資源少、可應用於新商品
@@ -75,8 +77,11 @@
 3. 建案特徵稀疏矩陣
 ##### Step 3. 模型建置
 建置模型並訓練模型，可用類似grid_search(網格搜尋)尋找較佳參數。
+
 [官方文件參數定義](https://making.lyst.com/lightfm/docs/lightfm.html)
+
 模型範例:
+
 ```python=
 model = LightFM(loss = 'warp',
                 random_state = 42,
@@ -91,8 +96,11 @@ model = model.fit(interactions = interactions_train,
                   verbose = True)
 ```
 超參數(learning_schedule)比較範例圖:
+
 ![](https://hackmd.io/_uploads/r1ZQITTHn.png)
+
 超參數(no_components)比較範例圖:
+
 ![](https://hackmd.io/_uploads/By6SFTaS3.png)
 
 
@@ -100,7 +108,9 @@ model = model.fit(interactions = interactions_train,
 1. auc_score
 2. precision_at_k
 3. recall_at_k (目前採用此方法，k設定為5)
+
 判斷每位會員正確預測推薦佔真正有預約(互動)之比率。
+
 Ex: A會員真正有預約(a,b,c,d,e)，模型推薦(a,b,c,f,g)，recall=TP/(TP+FN)=3/(3+2)=0.6。
 
 [評估指標官方文件參考](https://making.lyst.com/lightfm/docs/lightfm.evaluation.html)
@@ -108,9 +118,13 @@ Ex: A會員真正有預約(a,b,c,d,e)，模型推薦(a,b,c,f,g)，recall=TP/(TP+
 
 ### 5. 預測
 1. 每位會員top5推薦建案。
+
 ![](https://hackmd.io/_uploads/BJOMji6S2.png)
+
 3. 每建案推薦會員名單。
+
 目前採用模型推薦分數>0即加入名單。
+
 ![](https://hackmd.io/_uploads/HkBEji6B3.png)
 
 
