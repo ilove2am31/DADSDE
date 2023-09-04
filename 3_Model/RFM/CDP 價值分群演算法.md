@@ -88,6 +88,6 @@ iV. 其餘分類為忠誠客群
 
 以Recency為橫軸，Monetary為縱軸作圖。
 
+![3D圖範例](https://github.com/ilove2am31/DADSDE/assets/18157153/9765f470-9418-416e-95c8-2b2ef9e65354)
 
-
-
+3D圖範例
